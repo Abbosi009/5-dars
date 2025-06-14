@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sky {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: orange;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: rise 8s infinite linear;
+}
+
+@keyframes rise {
+  0% {
+    bottom: 50px;
+    background-color: orange;
+  }
+  50% {
+    bottom: 250px;
+    background-color: yellow;
+  }
+  100% {
+    bottom: 50px;
+    background-color: orange;
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 50px;
+  width: 80px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50px;
+  opacity: 0.8;
+  animation: moveClouds 12s linear infinite alternate;
+}
+
+.cloud1 {
+  left: 10%;
+  animation-duration: 14s;
+}
+
+.cloud2 {
+  left: 40%;
+  animation-duration: 12s;
+  top: 80px;
+}
+
+.cloud3 {
+  left: 70%;
+  animation-duration: 16s;
+  top: 60px;
+}
+
+@keyframes moveClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+
+.mountains {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to right, transparent 0%, #4a90e2 25%, #4a90e2 50%, #4a90e2 75%, transparent 100%);
+  clip-path: polygon(
+    0% 100%, 15% 40%, 30% 100%,
+    45% 50%, 60% 100%,
+    75% 30%, 90% 100%, 100% 100%
+  );
+}
